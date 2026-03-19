@@ -16,7 +16,8 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-#include "MainComponent.h"
+#include "main_component.h"
+
 #include <JuceHeader.h>
 
 class DAWApplication : public juce::JUCEApplication {

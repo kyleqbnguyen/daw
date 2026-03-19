@@ -86,7 +86,7 @@ clang-format -i src/**/*.cpp src/**/*.h
 Order (sorted case-insensitive within each group, separated by blank line):
 
 1. Corresponding header (for `.cpp` files)
-2. Project headers (`"Header.h"`)
+2. Project headers (`"header.h"`)
 3. Third-party/system headers (`<JuceHeader.h>`, `<tracktion_engine/...>`)
 
 ### Naming Conventions
@@ -95,7 +95,7 @@ Order (sorted case-insensitive within each group, separated by blank line):
 - **Functions/Methods:** `camelCase` — `getApplicationName()`, `closeButtonPressed()`
 - **Variables/Members:** `camelCase` — `mainWindow`, `engine`
 - **Constants/Enums:** follow JUCE conventions
-- **Files:** `PascalCase.cpp` / `PascalCase.h`, matching the primary class name
+- **Files:** `snake_case.cpp` / `snake_case.h` — use lowercase with underscores
 
 ### Comments
 
@@ -171,7 +171,7 @@ Test files use the shortened form (omit the "more details" paragraph).
 
 ## Key Architecture Notes
 
-- `src/Main.cpp` — JUCE application entry point, owns `MainWindow`
+- `src/main.cpp` — JUCE application entry point, owns `MainWindow`
 - `MainComponent` — root UI component, owns the `tracktion::engine::Engine`
 - Tracktion Engine is added as modules only (not the full repo) to avoid
   duplicate JUCE targets — see the `FetchContent_Declare` pattern in

@@ -62,8 +62,8 @@ juce_add_gui_app(
 
 juce_generate_juce_header(DAW)
 
-target_sources(DAW PRIVATE src/Main.cpp src/MainComponent.cpp
-                           src/MainComponent.h)
+target_sources(DAW PRIVATE src/main.cpp src/main_component.cpp
+                           src/main_component.h)
 
 target_compile_definitions(
   DAW
