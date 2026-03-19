@@ -36,13 +36,10 @@ FetchContent_Declare(
   tracktion_engine
   GIT_REPOSITORY https://github.com/Tracktion/tracktion_engine.git
   GIT_TAG v3.2.0
-  GIT_SHALLOW TRUE)
-FetchContent_GetProperties(tracktion_engine)
-if(NOT tracktion_engine_POPULATED)
-  FetchContent_Populate(tracktion_engine)
-  add_subdirectory(${tracktion_engine_SOURCE_DIR}/modules
-                   ${tracktion_engine_BINARY_DIR}/modules)
-endif()
+  GIT_SHALLOW TRUE
+  GIT_SUBMODULES ""
+  SOURCE_SUBDIR modules)
+FetchContent_MakeAvailable(tracktion_engine)
 
 juce_add_gui_app(
   DAW

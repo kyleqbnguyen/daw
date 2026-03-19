@@ -174,6 +174,6 @@ Test files use the shortened form (omit the "more details" paragraph).
 - `src/Main.cpp` — JUCE application entry point, owns `MainWindow`
 - `MainComponent` — root UI component, owns the `tracktion::engine::Engine`
 - Tracktion Engine is added as modules only (not the full repo) to avoid
-  duplicate JUCE targets — see the `FetchContent_Populate` pattern in
+  duplicate JUCE targets — see the `FetchContent_Declare` pattern in
   `CMakeLists.txt`
 - Plugin hosting is enabled for VST3 and AU (macOS)
