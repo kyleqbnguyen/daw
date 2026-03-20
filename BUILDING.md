@@ -90,9 +90,9 @@ The built application will be at:
 
 | Platform | Path |
 |----------|------|
-| macOS | `build/DAW_artefacts/Release/DAW.app` |
-| Linux | `build/DAW_artefacts/Release/DAW` |
-| Windows | `build/DAW_artefacts/Release/DAW.exe` |
+| macOS | `build/DAW_artifacts/Release/DAW.app` |
+| Linux | `build/DAW_artifacts/Release/DAW` |
+| Windows | `build/DAW_artifacts/Release/DAW.exe` |
 
 ### Running Tests
 
@@ -134,7 +134,7 @@ via git. Subsequent builds use the cached dependencies in `build/_deps/`.
 ### macOS: "app is damaged" or Gatekeeper warning
 The built app is unsigned. Right-click and select "Open" to bypass Gatekeeper, or:
 ```bash
-xattr -cr build/DAW_artefacts/Release/DAW.app
+xattr -cr build/DAW_artifacts/Release/DAW.app
 ```
 
 ### Linux: No audio output

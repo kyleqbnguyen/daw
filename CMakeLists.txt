@@ -37,8 +37,7 @@ FetchContent_Declare(
   GIT_REPOSITORY https://github.com/Tracktion/tracktion_engine.git
   GIT_TAG v3.2.0
   GIT_SHALLOW TRUE
-  GIT_SUBMODULES ""
-  SOURCE_SUBDIR modules)
+  GIT_SUBMODULES "" SOURCE_SUBDIR modules)
 FetchContent_MakeAvailable(tracktion_engine)
 
 juce_add_gui_app(
