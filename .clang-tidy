@@ -1,0 +1,32 @@
+Checks: >
+  -*,
+  clang-analyzer-*,
+  bugprone-*,
+  performance-*,
+  modernize-*,
+  readability-braces-around-statements,
+  readability-container-contains,
+  readability-container-size-empty,
+  readability-else-after-return,
+  readability-misleading-indentation,
+  readability-redundant-control-flow,
+  readability-redundant-smartptr-get,
+  readability-simplify-boolean-expr,
+  misc-unused-parameters,
+  misc-unused-using-decls,
+  portability-*,
+  -modernize-use-trailing-return-type
+
+WarningsAsErrors: >
+  clang-analyzer-*,
+  bugprone-*,
+  performance-*,
+  portability-*,
+  readability-braces-around-statements
+
+HeaderFilterRegex: '^(src|include|tests)/.*'
+FormatStyle: file
+
+CheckOptions:
+  - key: readability-braces-around-statements.ShortStatementLines
+    value: '0'

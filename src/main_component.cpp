@@ -22,7 +22,7 @@ MainComponent::MainComponent() {
   setSize(1280, 720);
 }
 
-MainComponent::~MainComponent() {}
+MainComponent::~MainComponent() = default;
 
 void MainComponent::paint(juce::Graphics& g) {
   g.fillAll(juce::Colour(0xFF1E1E2E));

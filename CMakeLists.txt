@@ -40,6 +40,10 @@ FetchContent_Declare(
   GIT_SUBMODULES "" SOURCE_SUBDIR modules)
 FetchContent_MakeAvailable(tracktion_engine)
 
+add_library(daw_core STATIC src/layout/layout_engine.cpp)
+target_include_directories(daw_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
+target_compile_features(daw_core PUBLIC cxx_std_20)
+
 juce_add_gui_app(
   DAW
   PRODUCT_NAME
@@ -77,7 +81,8 @@ target_compile_definitions(
 
 target_link_libraries(
   DAW
-  PRIVATE tracktion::tracktion_engine
+  PRIVATE daw_core
+          tracktion::tracktion_engine
           tracktion::tracktion_core
           tracktion::tracktion_graph
           juce::juce_audio_devices
@@ -106,11 +111,11 @@ if(DAW_BUILD_TESTS)
     GIT_SHALLOW TRUE)
   FetchContent_MakeAvailable(Catch2)
 
-  add_executable(DAWTests tests/main_test.cpp)
+  add_executable(DAWTests tests/main_test.cpp tests/layout_engine_test.cpp)
 
   target_compile_features(DAWTests PRIVATE cxx_std_20)
 
-  target_link_libraries(DAWTests PRIVATE Catch2::Catch2WithMain)
+  target_link_libraries(DAWTests PRIVATE Catch2::Catch2WithMain daw_core)
 
   include(CTest)
   include(Catch)
