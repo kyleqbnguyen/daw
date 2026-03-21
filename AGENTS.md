@@ -24,7 +24,7 @@ cmake --build build --config Release --parallel
 Run the application (macOS):
 
 ```bash
-open build/DAW_artifacts/Release/DAW.app
+open build/DAW_artefacts/Release/DAW.app
 ```
 
 ## Test Commands
